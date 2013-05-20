@@ -1,0 +1,50 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Word:</b>
+  <%= @word.word %>
+</p>
+
+<p>
+  <b>Sen:</b>
+  <%= @word.sen %>
+</p>
+
+<p>
+  <b>Tips:</b>
+  <%= @word.tips %>
+</p>
+
+<p>
+  <b>Compare:</b>
+  <%= @word.compare %>
+</p>
+
+<p>
+  <b>Synonyms:</b>
+  <%= @word.synonyms %>
+</p>
+
+<p>
+  <b>Antonyms:</b>
+  <%= @word.antonyms %>
+</p>
+
+<p>
+  <b>Root:</b>
+  <%= @word.root %>
+</p>
+
+<p>
+  <b>Root derive:</b>
+  <%= @word.root_derive %>
+</p>
+
+<p>
+  <b>Note:</b>
+  <%= @word.note %>
+</p>
+
+
+<%= link_to 'Edit', edit_word_path(@word) %> |
+<%= link_to 'Back', words_path %>
