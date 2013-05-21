@@ -22,12 +22,12 @@
   </div>
   
   <div class="modal-body">
-    <input class="span3" type="text" id="word_title" placeholder="單詞" />
-    <input class="span5" type="text" id="word_meaning" placeholder="解釋" />
-    <textarea class="span8" type="text" id="word_sen" placeholder="例句"></textarea>
-    <textarea class="span8" type="text" id="word_tips" placeholder="記法"></textarea>
-    <textarea class="span8" type="text" id="word_root" placeholder="字根"></textarea>
-    <textarea class="span8" type="text" id="word_note" placeholder="備註"></textarea>
+    <input class="span4" type="text" id="word_title" placeholder="單詞" />
+    <textarea class="span10" type="text" id="word_meaning" placeholder="解釋"></textarea>
+    <textarea class="span10" type="text" id="word_sen" placeholder="例句"></textarea>
+    <textarea class="span10" type="text" id="word_tips" placeholder="記法"></textarea>
+    <textarea class="span10" type="text" id="word_root" placeholder="字根"></textarea>
+    <textarea class="span10" type="text" id="word_note" placeholder="備註"></textarea>
   </div>
 
   <div class="modal-footer">
