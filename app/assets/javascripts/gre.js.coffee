@@ -9,5 +9,5 @@ window.GRE =
 
 $(document).ready ->
 	GRE.initialize()
-	$('#wordlist').on 'hover', '.word', ->
-		$('.word-panel', this).toggle()
+	# $('#wordlist').on 'hover', '.word', ->
+	# 	$('.word-panel', this).toggle()

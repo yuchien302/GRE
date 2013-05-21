@@ -28,7 +28,6 @@
 }
 
 #desktop .word-panel{
-	display: none;
 	position: absolute;
 	top: 0px;
 	right: 20px;
@@ -56,6 +55,9 @@
   #new_word {
     display: none;
   }
+  #desktop .word-panel{
+		display: none;
+	}
 }
 
 
