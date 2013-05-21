@@ -69,11 +69,12 @@ class GRE.Views.WordsIndex extends Backbone.View
 
 	searchWord: ->
 		query = $('#search-word').val()
-		if query == "@"
+		pattern = new RegExp('^' + query)
+		cpattern = new RegExp('@$')
+		if cpattern.test( query )
 			$('#search-word').val("")
 		else
 			pattern = new RegExp('^' + query)
-			console.log pattern.test('abcde')
 			$(".word").show()
 			$(".word").filter (index) ->
 				!pattern.test( $(this).attr('id') )
