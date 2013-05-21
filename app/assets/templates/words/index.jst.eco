@@ -1,16 +1,15 @@
 
-<div class="row-fluid">
-  <div class="input-append span10">
-    <input class="span4" id="search-word" type="text">
-    <span class="add-on"><i class="icon-search"></i></span>
 
-  </div>
-  <div class="span2">
-    <button id="new_word" class='btn btn-success' href="#word_modal"  data-toggle="modal"> <i class="icon-plus icon-white"></i> </button>
-  </div>
-</div>
+<span class="input-append">
+  <input  id="search-word" type="text">
+  <span class="add-on"><i class="icon-search"></i></span>
+</span>
+
+<button id="new_word" class='btn btn-success' href="#word_modal"  data-toggle="modal"> <i class="icon-plus icon-white"></i> </button>
 
 <div id="wordlist"></div>
+
+
 
 <!-- Word Modal -->
 
