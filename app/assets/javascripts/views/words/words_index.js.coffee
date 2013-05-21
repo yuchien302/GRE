@@ -68,6 +68,7 @@ class GRE.Views.WordsIndex extends Backbone.View
 
 
 	searchWord: ->
+		$(".word").show()
 		query = $('#search-word').val()
 		pattern = new RegExp('^' + query)
 		cpattern = new RegExp('@$')
@@ -75,7 +76,6 @@ class GRE.Views.WordsIndex extends Backbone.View
 			$('#search-word').val("")
 		else
 			pattern = new RegExp('^' + query)
-			$(".word").show()
 			$(".word").filter (index) ->
 				!pattern.test( $(this).attr('id') )
 			.hide()
