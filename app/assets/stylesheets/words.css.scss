@@ -2,6 +2,10 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+#desktop {
+	position: relative;
+}
+
 #desktop .word{
 	background-color: #ffffff;
 	margin: 15px 0 15px 0;
@@ -22,7 +26,32 @@
 	
 }
 
+#main-panel {
+	position: fixed;
+	z-index: 10;
+	top:0;
+	left:0;
+	padding-top: 10px;
+	padding-bottom: 5px;
+
+	width: 100%;
+	-moz-box-shadow:0px 0px 3px 5px #e5e5e5;
+	-webkit-box-shadow:0px 0px 3px 5px #e5e5e5;
+	box-shadow:0px 0px 3px 5px #e5e5e5;
+
+	background-color: #e5e5e5;
+	width: 100%;
+	.input-append {
+		margin-left: 19px;
+	}
+}
+
+#wordlist {
+	margin-top: 45px;
+}
+
 .word-content pre {
+  font-family: '微軟正黑體', verdana, arial, helvetica, sans-serif;
 	background-color: #fff;
 	border: 0px;
 }
@@ -39,7 +68,6 @@
 
 #word_modal {
 	width: 830px;
-
 	margin-left: -415px;
 }
 
@@ -49,6 +77,7 @@
 
 #new_word {
 	float: right;
+	margin-right: 30px;
 }
 
 @media (max-width: 600px) {
@@ -58,42 +87,5 @@
   #desktop .word-panel{
 		display: none;
 	}
-}
-
-
-/* Base class */
-.bs-docs-example {
-  position: relative;
-  margin: 15px 0;
-  padding: 0px 0px 0px 45px;
-  *padding-top: 19px;
-  background-color: #fff;
-  border: 1px solid #ddd;
-  -webkit-border-radius: 4px;
-     -moz-border-radius: 4px;
-          border-radius: 4px;
-}
-
-/* Echo out a label for the example */
-.bs-docs-example:after {
-  content: "例句";
-  position: absolute;
-  top: -1px;
-  left: -1px;
-  padding: 3px 7px;
-  font-size: 12px;
-  font-weight: bold;
-  background-color: #f5f5f5;
-  border: 1px solid #ddd;
-  color: #9da0a4;
-  -webkit-border-radius: 4px 0 4px 0;
-     -moz-border-radius: 4px 0 4px 0;
-          border-radius: 4px 0 4px 0;
-}
-
-/* Remove spacing between an example and it's code */
-.bs-docs-example + .prettyprint {
-  margin-top: -20px;
-  padding-top: 15px;
 }
 

@@ -6,7 +6,7 @@ GRE::Application.routes.draw do
 
   match "/desktop", :to => "main_pages#desktop"
 
-  root :to => "main_pages#mobile"
+  root :to => "main_pages#desktop"
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
