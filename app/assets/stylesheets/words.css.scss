@@ -1,3 +1,42 @@
 // Place all the styles related to the Words controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+#desktop .word{
+	background-color: #ffffff;
+	// border: 1px solid #888;
+	margin: 15px 0 15px 0;
+
+
+	// padding: 0px 20px 20px 20px;
+	-webkit-border-radius: 1px;
+	-moz-border-radius: 1px;
+	border-radius: 1px;
+
+	-moz-box-shadow:0px 1px 3px 0px rgba(119, 119, 119, 0.81);
+	-webkit-box-shadow:0px 1px 3px 0px rgba(119, 119, 119, 0.81);
+	box-shadow:0px 1px 3px 0px rgba(119, 119, 119, 0.81);
+
+}
+
+#desktop .word-content {
+	margin-left: 20px;
+	margin-bottom: 10px;
+	margin-top: 20px;
+}
+
+#desktop .word-panel{
+	// line-height: 40px;
+	margin-top: 25px;
+
+}
+
+#word_modal {
+	width: 700px;
+
+	margin-left: -350px;
+}
+
+.hide-word {
+	display: none;
+}

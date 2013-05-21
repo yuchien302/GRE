@@ -1,3 +1,4 @@
 class Word < ActiveRecord::Base
-  attr_accessible :antonyms, :compare, :note, :root, :root_derive, :sen, :synonyms, :tips, :word
+  attr_accessible :title, :meaning, :sen, :tips, :root, :note, :root_derive, :synonyms, :antonyms, :compare
+  validates_uniqueness_of :title
 end

@@ -9,6 +9,7 @@ gem 'jquery-ui-rails'
 gem "font-awesome-sass-rails", "~> 3.0.2.2"
 gem 'maskedinput-rails'
 gem "d3_rails", "~> 3.1.4"
+gem "jquery_mobile_rails", "~> 1.3.0"
 
 group :development, :test do
   gem 'sqlite3', '1.3.5'

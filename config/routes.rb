@@ -1,7 +1,12 @@
 GRE::Application.routes.draw do
-  resources :words
+  
+  scope "api" do
+    resources :words
+  end
 
-  root :to => "words#index"
+  match "/desktop", :to => "main_pages#desktop"
+
+  root :to => "main_pages#mobile"
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

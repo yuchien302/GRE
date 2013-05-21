@@ -11,20 +11,21 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130520085834) do
+ActiveRecord::Schema.define(:version => 20130521041150) do
 
   create_table "words", :force => true do |t|
-    t.string   "word"
+    t.string   "title"
     t.text     "sen"
     t.text     "tips"
     t.text     "compare"
     t.text     "synonyms"
     t.text     "antonyms"
-    t.string   "root"
+    t.text     "root",        :limit => 255
     t.text     "root_derive"
     t.text     "note"
-    t.datetime "created_at",  :null => false
-    t.datetime "updated_at",  :null => false
+    t.datetime "created_at",                 :null => false
+    t.datetime "updated_at",                 :null => false
+    t.text     "meaning",     :limit => 255
   end
 
 end
