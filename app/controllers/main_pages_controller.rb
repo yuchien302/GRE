@@ -1,14 +1,14 @@
 class MainPagesController < ApplicationController
 
-	def mobile
+	def index
 		@words = Word.all(:order => "title ASC")
 
     respond_to do |format|
-      format.html # index.html.erb
+      format.html
     end
 	end
 	
-	def desktop
+	def wenyuchien
 	end
 
 end

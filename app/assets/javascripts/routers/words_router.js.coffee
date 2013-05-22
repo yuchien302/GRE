@@ -1,10 +1,10 @@
 class GRE.Routers.Words extends Backbone.Router
 	routes:
-		'raphael': 'raphael'
+		'wenyuchien': 'wenyuchien'
 		'': 'index'
 
-	raphael: ->
-		console.log "raphael"
+	wenyuchien: ->
+		console.log "wenyuchien"
 		@collection = new GRE.Collections.Words()
 		@collection.fetch({async:false, reset: true})
 		indexView = new GRE.Views.WordsIndex(collection: @collection)

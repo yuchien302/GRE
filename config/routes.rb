@@ -4,10 +4,10 @@ GRE::Application.routes.draw do
     resources :words
   end
 
-  match "/raphael", :to => "main_pages#desktop"
+  match "/wenyuchien", :to => "main_pages#wenyuchien"
 
 
-  root :to => "main_pages#desktop"
+  root :to => "main_pages#index"
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
