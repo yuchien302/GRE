@@ -4,7 +4,8 @@ GRE::Application.routes.draw do
     resources :words
   end
 
-  match "/desktop", :to => "main_pages#desktop"
+  match "/raphael", :to => "main_pages#desktop"
+
 
   root :to => "main_pages#desktop"
 
