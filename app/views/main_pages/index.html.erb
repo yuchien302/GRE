@@ -11,7 +11,7 @@
 	<div id="wordlist">
 
 		<% @words.each do |word| %>
-			<% if word["root"]!="" && word["root"]!="*" %>
+			<% if word["root"]=="*" %>
 			<div class="row-fluid word word-root" id="_<%= word.title %>" data-wid="<%= word.id %>">
 			<% else %>
 			<div class="row-fluid word" id="_<%= word.title %>" data-wid="<%= word.id %>">
