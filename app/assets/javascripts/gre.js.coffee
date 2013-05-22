@@ -22,7 +22,8 @@ window.GRE =
 
 	initialize: -> 
 		new GRE.Routers.Words
-		Backbone.history.start({pushState: true})
+		Backbone.history.start({hashChange: false})
+
 
 $(document).ready ->
 	GRE.initialize()
