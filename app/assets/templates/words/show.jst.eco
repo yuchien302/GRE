@@ -7,7 +7,7 @@
 		<% if @model.get('meaning')!="": %>
 		<div>
 			<span class="label label-success">解釋</span>
-			<pre><%= @model.get('meaning') %></pre>
+			<div class="content content-meaning"><%= @model.get('meaning') %></div>
 		</div>
 		<% end %>
 
@@ -15,14 +15,14 @@
 		<% if @model.get('tips')!="": %>
 		<div>
 			<span class="label label-important">記</span>
-			<pre><%= @model.get('tips') %></pre>
+			<div class="content content-tips"></div>
 		</div>
 		<% end %>
 
 		<% if @model.get('sen')!="": %>
 		<div>
 			<span class="label label-info">例</span>
-			<pre><%= @model.get('sen') %></pre>
+			<div class="content content-sen"></div>
 		</div>
 		<% end %>
 
@@ -31,7 +31,7 @@
 		<% if @model.get('root')!="": %>
 		<div>
 			<span class="label">字根</span>
-			<pre><%= @model.get('root') %></pre>
+			<div class="content content-root"></div>
 		</div>
 		<% end %>
 
@@ -39,7 +39,7 @@
 		<% if @model.get('note')!="": %>
 		<div>
 			<span class="label">備註</span>
-			<pre><%= @model.get('note') %></pre>
+			<div class="content content-note"></div>
 		</div>
 		<% end %>
 

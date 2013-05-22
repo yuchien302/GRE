@@ -13,7 +13,12 @@ class GRE.Views.WordShow extends Backbone.View
   
 
 	render: ->
-		$(@el).html(@template(model: @model))
+		$(@el).html(@template({model: @model}))
+		@$(".content-tips").html(GRE.prettyText(@model.get('tips')));
+		@$(".content-sen").html(GRE.prettyText(@model.get('sen')));
+		@$(".content-root").html(GRE.prettyText(@model.get('root')));
+		@$(".content-root").html(GRE.prettyText(@model.get('note')));
+
 		$(@el).attr('id', @model.get('title'))
 		$(@el).attr('data-wid', @model.id)
 		this
@@ -21,7 +26,7 @@ class GRE.Views.WordShow extends Backbone.View
 	editWord: ->
 		Backbone.submitType = "Edit"
 		$('#word_modal').attr('data-wid', @model.id)
-		
+
 		$('#word_title').val(@model.get('title'))
 		$('#word_meaning').val(@model.get('meaning'))
 		$('#word_sen').val(@model.get('sen'))
