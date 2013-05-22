@@ -24,12 +24,18 @@
 		word-wrap: normal;
 	}
 	.word-anchor{
-		// color: #ff0000;
 		position: absolute;
 		top: -55px;
 
 	}
+
 }
+
+#desktop .word-root {
+		// background-color: #f2e4bb;
+		background-color: rgb(255, 245, 242);
+		
+	}
 
 #desktop .word-content {
 	margin: 20px 20px 20px 20px; 

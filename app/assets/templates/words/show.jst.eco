@@ -28,7 +28,7 @@
 
 
 
-	<% if @model.get('root')!="": %>
+	<% if @model.get('root')!="" && @model.get('root')!="*": %>
 	<div>
 		<span class="label">字根</span>
 		<div class="content content-root"></div>
