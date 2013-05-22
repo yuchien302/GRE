@@ -14,6 +14,7 @@ class GRE.Views.WordShow extends Backbone.View
 
 	render: ->
 		$(@el).html(@template({model: @model}))
+		@$(".content-meaning").html(GRE.prettyText(@model.get('meaning')));
 		@$(".content-tips").html(GRE.prettyText(@model.get('tips')));
 		@$(".content-sen").html(GRE.prettyText(@model.get('sen')));
 		@$(".content-root").html(GRE.prettyText(@model.get('root')));
