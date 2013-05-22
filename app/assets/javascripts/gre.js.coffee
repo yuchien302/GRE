@@ -29,7 +29,10 @@ $(document).ready ->
 	GRE.initialize()
 	# $('#wordlist').on 'hover', '.word', ->
 	# 	$('.word-panel', this).toggle()
+
 	$('a').on 'click', ->
 		$('.word').show()
-		# $('#search-word').val('')
+
+	$(window).on 'hashchange', ->
+		$('.word').show()
 	

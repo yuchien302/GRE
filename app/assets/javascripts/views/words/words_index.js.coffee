@@ -69,8 +69,10 @@ class GRE.Views.WordsIndex extends Backbone.View
 
 
 	searchWord: ->
+		console.log "searchWord"
+		# location.hash = ""
 		$(".word").show()
-		location.hash = ""
+		
 		query = $('#search-word').val()
 		pattern = new RegExp('^' + query)
 		cpattern = new RegExp('@$')
