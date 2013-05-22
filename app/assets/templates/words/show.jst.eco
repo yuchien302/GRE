@@ -1,57 +1,54 @@
-<!-- <div class="span10"> -->
-	<div class="word-content">
+<div id="<%= @model.get('title') %>" class="word-anchor" >123</div>
+<div class="word-content">
 
-		<h2><%= @model.get('title') %></h2>
-			
+	<h2><%= @model.get('title') %></h2>
+		
 
-		<% if @model.get('meaning')!="": %>
-		<div>
-			<span class="label label-success">解釋</span>
-			<div class="content content-meaning"><%= @model.get('meaning') %></div>
-		</div>
-		<% end %>
-
-
-		<% if @model.get('tips')!="": %>
-		<div>
-			<span class="label label-important">記</span>
-			<div class="content content-tips"></div>
-		</div>
-		<% end %>
-
-		<% if @model.get('sen')!="": %>
-		<div>
-			<span class="label label-info">例</span>
-			<div class="content content-sen"></div>
-		</div>
-		<% end %>
-
-
-
-		<% if @model.get('root')!="": %>
-		<div>
-			<span class="label">字根</span>
-			<div class="content content-root"></div>
-		</div>
-		<% end %>
-
-
-		<% if @model.get('note')!="": %>
-		<div>
-			<span class="label">備註</span>
-			<div class="content content-note"></div>
-		</div>
-		<% end %>
-
-	
-
+	<% if @model.get('meaning')!="": %>
+	<div>
+		<span class="label label-success">解釋</span>
+		<div class="content content-meaning"><%= @model.get('meaning') %></div>
 	</div>
-<!-- </div> -->
+	<% end %>
 
-<!-- <div class="span2"> -->
-	<div class="word-panel">
-		<button class='btn btn-warning edit_word' href="#word_modal" data-toggle="modal"> <i class="icon-edit icon-white"></i> </button>
-		<button class='btn btn-danger remove_word'> <i class="icon-trash icon-white"></i> </button>
+
+	<% if @model.get('tips')!="": %>
+	<div>
+		<span class="label label-important">記</span>
+		<div class="content content-tips"></div>
 	</div>
-<!-- </div> -->
-	
+	<% end %>
+
+	<% if @model.get('sen')!="": %>
+	<div>
+		<span class="label label-info">例</span>
+		<div class="content content-sen"></div>
+	</div>
+	<% end %>
+
+
+
+	<% if @model.get('root')!="": %>
+	<div>
+		<span class="label">字根</span>
+		<div class="content content-root"></div>
+	</div>
+	<% end %>
+
+
+	<% if @model.get('note')!="": %>
+	<div>
+		<span class="label">備註</span>
+		<div class="content content-note"></div>
+	</div>
+	<% end %>
+
+
+
+</div>
+
+<div class="word-panel">
+	<button class='btn btn-warning edit_word' href="#word_modal" data-toggle="modal"> <i class="icon-edit icon-white"></i> </button>
+	<button class='btn btn-danger remove_word'> <i class="icon-trash icon-white"></i> </button>
+</div>
+
