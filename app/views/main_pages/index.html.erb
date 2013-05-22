@@ -1,1 +1,58 @@
-<h1>Index</h1>
+<div id="desktop" class="container">
+
+	<!-- Main Panel -->
+	<div id='main-panel'>
+	  <span class="input-append">
+	    <input  id="search-word" type="text">
+	    <span class="add-on"><i class="icon-search"></i></span>
+	  </span>
+	</div>
+
+	<div id="wordlist">
+
+		<% @words.each do |word| %>
+		<div class="row-fluid word" id="_<%= word.title %>" data-wid="<%= word.id %>">
+			<div id="<%= word.title %>" class="word-anchor" ></div>
+			<div class="word-content">
+				<h2><%= word.title %></h2>
+
+				<% if word["meaning"]!="" %>
+				<div>
+					<span class="label label-success">解釋</span>
+					<div class="content content-meaning"><%= word["meaning"] %></div>
+				</div>
+				<% end %>
+
+				<% if word["tips"]!="" %>
+				<div>
+					<span class="label label-important">記</span>
+					<div class="content content-tips"><%= word["tips"] %></div>
+				</div>
+				<% end %>
+
+				<% if word["sen"]!="" %>
+				<div>
+					<span class="label label-info">例</span>
+					<div class="content content-sen"><%= word["sen"] %></div>
+				</div>
+				<% end %>
+
+				<% if word["root"]!="" && word["root"]!="*" %>
+				<div>
+					<span class="label">字根</span>
+					<div class="content content-root"><%= word["root"] %></div>
+				</div>
+				<% end %>
+
+				<% if word["note"]!="" %>
+				<div>
+					<span class="label">備註</span>
+					<div class="content content-note"><%= word["note"] %></div>
+				</div>
+				<% end %>
+
+			</div>
+		</div>
+		<% end %>
+	</div>
+</div>
