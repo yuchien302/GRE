@@ -33,9 +33,9 @@ class GRE.Routers.Words extends Backbone.Router
 			else
 				pattern = new RegExp('^_' + query)
 				$(".word").filter (index) ->
-					!pattern.test( $(this).attr('id') )
+					!pattern.test( this.id )
 				.hide()
-				
+
 		$("#search-word").on "focus", ->
 			$(".word").show()		
 			query = $('#search-word').val()
@@ -46,5 +46,5 @@ class GRE.Routers.Words extends Backbone.Router
 			else
 				pattern = new RegExp('^_' + query)
 				$(".word").filter (index) ->
-					!pattern.test( $(this).attr('id') )
+					!pattern.test( this.id )
 				.hide()

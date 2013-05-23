@@ -3,7 +3,8 @@ class WordsController < ApplicationController
   respond_to :json
   
   def index
-    respond_with Word.all(:order => "title ASC")
+    # respond_with Word.all(:order => "title ASC")
+    respond_with Word.all(:order => "LOWER(title)")
   end
   
   def show
