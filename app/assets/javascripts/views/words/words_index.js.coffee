@@ -15,7 +15,7 @@ class GRE.Views.WordsIndex extends Backbone.View
   
 	render: ->
 		$(@el).html(@template())
-		@collection.sort()
+		# @collection.sort()
 		@collection.each(@appendWord)
 		this
 
