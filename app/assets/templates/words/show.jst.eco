@@ -1,4 +1,4 @@
-<div id="<%= @model.get('title') %>" class="word-anchor2" ><%= @model.get('title') %></div>
+<div id="<%= @model.get('title') %>" class="word-anchor" ></div>
 <div class="word-content">
 
 	<h2><%= @model.get('title') %></h2>

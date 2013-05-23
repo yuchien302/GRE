@@ -28,7 +28,7 @@ class GRE.Views.WordsIndex extends Backbone.View
 		$wordview = @$("#" + title)
 		title = title.substr(0, title.length-1)
 		while ( ( title!="" && @$("#"+title).length == 0 ) )
-			$wordview.prepend("<div id=\"" + title + "\" class='word-anchor2' >"+title+"</div>")
+			$wordview.prepend("<div id=\"" + title + "\" class='word-anchor' ></div>")
 			title = title.substr(0, title.length-1)
 
 
