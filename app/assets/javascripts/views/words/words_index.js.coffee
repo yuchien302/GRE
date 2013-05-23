@@ -20,9 +20,17 @@ class GRE.Views.WordsIndex extends Backbone.View
 		this
 
 	appendWord: (word) =>
+		if word.get('title') == ""
+			return
 		view = new GRE.Views.WordShow(model: word)
-		
 		@$("#wordlist").append(view.render().el)
+		title = word.get('title')
+		$wordview = @$("#" + title)
+		title = title.substr(0, title.length-1)
+		while ( ( title!="" && @$("#"+title).length == 0 ) )
+			$wordview.prepend("<div id=\"" + title + "\" class='word-anchor2' >"+title+"</div>")
+			title = title.substr(0, title.length-1)
+
 
 
 	newWord: (e) ->
@@ -69,18 +77,17 @@ class GRE.Views.WordsIndex extends Backbone.View
 
 
 	searchWord: ->
-		# console.log "searchWord"
-		# location.hash = ""
-		$(".word").show()
+		location.hash = $('#search-word').val()
+		# $(".word").show()
 		
-		query = $('#search-word').val()
-		pattern = new RegExp('^' + query)
-		cpattern = new RegExp('@$')
-		if cpattern.test( query )
-			$('#search-word').val("")
-		else
-			pattern = new RegExp('^_' + query)
-			$(".word").filter (index) ->
-				!pattern.test( $(this).attr('id') )
-			.hide()
+		# query = 
+		# pattern = new RegExp('^' + query)
+		# cpattern = new RegExp('@$')
+		# if cpattern.test( query )
+		# 	$('#search-word').val("")
+		# else
+		# 	pattern = new RegExp('^_' + query)
+		# 	$(".word").filter (index) ->
+		# 		!pattern.test( $(this).attr('id') )
+		# 	.hide()
 

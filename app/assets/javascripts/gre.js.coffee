@@ -30,9 +30,9 @@ $(document).ready ->
 	# $('#wordlist').on 'hover', '.word', ->
 	# 	$('.word-panel', this).toggle()
 
-	$('a').on 'click', ->
-		$('.word').show()
+	# $('a').on 'click', ->
+	# 	$('.word').show()
 
-	$(window).on 'hashchange', ->
-		$('.word').show()
+	# $(window).on 'hashchange', ->
+	# 	$('.word').show()
 	

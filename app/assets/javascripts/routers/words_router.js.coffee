@@ -24,27 +24,7 @@ class GRE.Routers.Words extends Backbone.Router
 			$(this).html( GRE.prettyText( $(this).text() ) )
 
 		$("#search-word").on "keyup", ->
-			$(".word").show()		
-			query = $('#search-word').val()
-			pattern = new RegExp('^' + query)
-			cpattern = new RegExp('@$')
-			if cpattern.test( query )
-				$('#search-word').val("")
-			else
-				pattern = new RegExp('^_' + query)
-				$(".word").filter (index) ->
-					!pattern.test( this.id )
-				.hide()
+			location.hash = $('#search-word').val()
 
 		$("#search-word").on "focus", ->
-			$(".word").show()		
-			query = $('#search-word').val()
-			pattern = new RegExp('^' + query)
-			cpattern = new RegExp('@$')
-			if cpattern.test( query )
-				$('#search-word').val("")
-			else
-				pattern = new RegExp('^_' + query)
-				$(".word").filter (index) ->
-					!pattern.test( this.id )
-				.hide()
+			location.hash = $('#search-word').val()
