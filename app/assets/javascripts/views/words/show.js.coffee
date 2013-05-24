@@ -48,7 +48,8 @@ class GRE.Views.WordShow extends Backbone.View
 
 
 	removeWord: ->
-		@model.destroy()
+		sure = confirm "確定嗎QQ?"
+		@model.destroy() if sure
 
 	close: =>
 		this.remove()
