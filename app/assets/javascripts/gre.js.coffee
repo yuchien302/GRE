@@ -35,4 +35,14 @@ $(document).ready ->
 
 	# $(window).on 'hashchange', ->
 	# 	$('.word').show()
+	# $(document).on 'keydown', (e) ->
+	# 	console.log "press ctrl"
+	# 	if e.keyCode==17
+	# 		e.preventDefault()
+	# 		e.stopPropagation()
+	# 		$('.my-editable').attr('contenteditable', false)
+			
+
+
+
 	

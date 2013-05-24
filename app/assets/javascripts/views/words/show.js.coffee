@@ -31,17 +31,23 @@ class GRE.Views.WordShow extends Backbone.View
 	editWord: ->
 		Backbone.submitType = "Edit"
 		$('#word_modal').attr('data-wid', @model.id)
+		
+		# $('#word_title_preview').html(GRE.prettyText(@model.get('title')))
+		# $('#word_meaning_preview').html(GRE.prettyText(@model.get('meaning')))
+		# $('#word_tips_preview').html(GRE.prettyText(@model.get('tips')))
+		# $('#word_sen_preview').html(GRE.prettyText(@model.get('sen')))
+		# $('#word_root_preview').html(GRE.prettyText(@model.get('root')))
+		# $('#word_note_preview').html(GRE.prettyText(@model.get('note')))
 
 		$('#word_title').val(@model.get('title'))
 		$('#word_meaning').val(@model.get('meaning'))
-		$('#word_sen').val(@model.get('sen'))
 		$('#word_tips').val(@model.get('tips'))
+		$('#word_sen').val(@model.get('sen'))
 		$('#word_root').val(@model.get('root'))
 		$('#word_note').val(@model.get('note'))
 
 
 	removeWord: ->
-		console.log "remove"
 		@model.destroy()
 
 	close: =>
