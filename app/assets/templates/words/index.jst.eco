@@ -23,31 +23,34 @@
   </div>
 
   <div class="modal-body">
+    <div>
+      <span class="label label-success">解釋</span><br>
+      <textarea  id="word_meaning" class="span6 content my-textarea" placeholder="meaning"></textarea><br>
+    </div>
 
 
+    <div>
+      <span class="label label-important">記</span><br>
+      <textarea  id="word_tips" class="span6 content my-textarea" placeholder="tips"></textarea><br>
+    </div>
+    
 
-    <span class="label label-success">解釋</span><br>
-    <textarea  id="word_meaning" class="span6 content my-textarea" placeholder="meaning"></textarea><br>
+    <div>
+      <span class="label label-info">例</span><br>
+      <textarea  id="word_sen" class="span6 content my-textarea" placeholder="sen"></textarea><br>
+    </div>
+    
 
-    <span class="label label-important">記</span><br>
-    <textarea  id="word_tips" class="span6 content my-textarea" placeholder="tips"></textarea><br>
+    <div>
+      <span class="label">字根</span><br>
+      <textarea  id="word_root" class="span6 content my-textarea" placeholder="root"></textarea><br>
+    </div>
+    
 
-    <span class="label label-info">例</span><br>
-    <textarea  id="word_sen" class="span6 content my-textarea" placeholder="sen"></textarea><br>
-
-    <span class="label">字根</span><br>
-    <textarea  id="word_root" class="span6 content my-textarea" placeholder="root"></textarea><br>
-
-    <span class="label">備註</span><br>
-    <textarea  id="word_note" class="span6 content my-textarea" placeholder="note"></textarea><br>
-
-    <!-- <div id="word_title" class="word_temp" >title</div>
-    <div id="word_meaning" class="word_temp" >meaning</div>
-    <div id="word_tips" class="word_temp" >tips</div>
-    <div id="word_sen" class="word_temp" >sen</div>
-    <div id="word_root" class="word_temp" >root</div>
-    <div id="word_note" class="word_temp" >note</div>
- -->
+    <div>
+      <span class="label">備註</span><br>
+      <textarea  id="word_note" class="span6 content my-textarea" placeholder="note"></textarea><br>
+    </div>
 
   </div>
 
