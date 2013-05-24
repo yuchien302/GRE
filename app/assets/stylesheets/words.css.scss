@@ -113,6 +113,11 @@
 	box-shadow: none;
 }
 
+#word_modal:focus{
+	box-shadow: none;
+	outline: none;
+}
+
 #word_modal .my-textarea{
 	resize:none;
 	border-radius: none;

@@ -16,29 +16,18 @@ class GRE.Views.WordsIndex extends Backbone.View
 
 	render: ->
 		$(@el).html(@template())
-		# @$(".my-editable").on 'dblclick', (e) ->
-			# $(this).attr('contenteditable', true).focus()
-			# $('#word_title_preview').text( $('#word_title').text() )
-			# $('#word_meaning_preview').text( $('#word_meaning').text() )
-			# $('#word_sen_preview').text( $('#word_sen').text() )
-			# $('#word_root_preview').text( $('#word_root').text() )
-			# $('#word_title_preview').text( $('#word_title').text() )
+		@$(".modal-body").on "mouseenter", ->
+			console.log "mouseenter"
+			$("body").css("overflow", "hidden");
+		.on "mouseleave", ->
+			$("body").css("overflow", "auto");
 
+		@$(".my-textarea").on "mouseenter", ->
+			console.log "mouseenter"
+			$(".modal-body").css("overflow", "hidden");
+		.on "mouseleave", ->
+			$(".modal-body").css("overflow", "auto");
 
-		# @$(".my-editable").on 'blur', (e) ->
-			# $(this).attr('contenteditable', false)
-			# $('#word_title').text( $('#word_title_preview').text() )
-			# $('#word_meaning').text( $('#word_meaning_preview').text() )
-			# $('#word_sen').text( $('#word_sen_preview').text() )
-			# $('#word_root').text( $('#word_root_preview').text() )
-			# $('#word_note').text( $('#word_title_preview').text() )							
-
-			# $('#word_title_preview').html(GRE.prettyText($('#word_title_preview').text()))
-			# $('#word_meaning_preview').html(GRE.prettyText($('#word_meaning_preview').text()))
-			# $('#word_tips_preview').html(GRE.prettyText($('#word_tips_preview').text()))
-			# $('#word_sen_preview').html(GRE.prettyText($('#word_sen_preview').text()))
-			# $('#word_root_preview').html(GRE.prettyText($('#word_root_preview').text()))
-			# $('#word_note_preview').html(GRE.prettyText($('#word_note_preview').text()))
 
 		@collection.each(@appendWord)
 		this
