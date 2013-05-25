@@ -16,18 +16,29 @@ class GRE.Views.WordsIndex extends Backbone.View
 
 	render: ->
 		$(@el).html(@template())
-		@$(".modal-body").on "mouseenter", ->
-			console.log "mouseenter"
-			$("body").css("overflow", "hidden");
-		.on "mouseleave", ->
-			$("body").css("overflow", "auto");
+		# @$(".modal-body").on "mouseenter", ->
+		# 	$("body").css("overflow", "hidden")
+		# .on "mouseleave", ->
+		# 	$("body").css("overflow", "auto")
 
-		@$(".my-textarea").on "mouseenter", ->
-			console.log "mouseenter"
-			$(".modal-body").css("overflow", "hidden");
-		.on "mouseleave", ->
-			$(".modal-body").css("overflow", "auto");
+		# @$(".my-textarea").on "mouseenter", ->
+		# 	console.log "mouseenter"
+		# 	$(".modal-body").css("overflow", "hidden");
+		# .on "mouseleave", ->
+		# 	$(".modal-body").css("overflow", "auto");
 
+		# @$(".modal-body").on "scroll", (e, d) ->
+		# 	t = $(this);
+		# 	# console.log "mousewheel " + d
+		# 	e.bubbles = false
+		# 	console.log d
+		# 	if (d > 0 && t.scrollTop() == 0)
+
+		# 		e.preventDefault();
+		# 	else
+		# 		if (d < 0 && (t.scrollTop() == t.get(0).scrollHeight - t.innerHeight()))
+		# 			e.preventDefault();
+ 
 
 		@collection.each(@appendWord)
 		this

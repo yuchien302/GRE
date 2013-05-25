@@ -19,6 +19,10 @@ window.GRE =
 			
 			begin = text.search(pattermb)
 		text.split('\n').join('</br>')
+	stopScroll: (e) ->
+		e.preventDefault()
+		console.log "stop"
+		# e.stopPropagation()
 
 	initialize: -> 
 		new GRE.Routers.Words
