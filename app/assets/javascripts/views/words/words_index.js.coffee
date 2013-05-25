@@ -6,7 +6,7 @@ class GRE.Views.WordsIndex extends Backbone.View
 		"click #submit_word": 'submitWord'
 		"click #new_word": 'newWord'
 		"keyup #search-word": 'searchWord'
-		"focus #search-word": 'searchWord'
+		"focus #search-word": 'focusSearchWord'
 
 	initialize: ->
 		@collection.on('reset', @render, this)
@@ -112,6 +112,9 @@ class GRE.Views.WordsIndex extends Backbone.View
 		location.hash = $('#search-word').val()
 		# $(".word").show()
 		
+	focusSearchWord: ->
+		location.hash = ""
+		location.hash = $('#search-word').val()
 		# query = 
 		# pattern = new RegExp('^' + query)
 		# cpattern = new RegExp('@$')
