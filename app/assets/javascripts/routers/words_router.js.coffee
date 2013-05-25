@@ -27,4 +27,5 @@ class GRE.Routers.Words extends Backbone.Router
 			location.hash = $('#search-word').val()
 
 		$("#search-word").on "focus", ->
+			location.hash = ""
 			location.hash = $('#search-word').val()
