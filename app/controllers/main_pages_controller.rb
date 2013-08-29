@@ -1,6 +1,6 @@
 class MainPagesController < ApplicationController
 
-	def index
+	def railsapp
 		@words = Word.all()
 		@words = @words.sort { |x, y|
 			wordx = x[:title].downcase
@@ -23,7 +23,10 @@ class MainPagesController < ApplicationController
     end
 	end
 	
-	def wenyuchien
+	def backboneapp
+	end
+
+	def ngapp
 	end
 
 end

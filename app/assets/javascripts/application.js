@@ -14,7 +14,10 @@
 //= require bootstrap
 //= require underscore
 //= require backbone
-//= require gre
+//= require backboneApp
+//= require angular
+//= require angular-resource
+//= require ngApp
 //= require_tree ../templates
 //= require_tree ./models
 //= require_tree ./collections

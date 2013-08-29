@@ -1,0 +1,13 @@
+<div ng-app="GRE" id="ngapp">
+
+	<div ng-controller="GRECtrl">
+
+		<input type="text" ng-model="searchText">
+		<div id="wordlist">
+			<div class="row-fluid word" ng-repeat="word in words | filter:searchText | orderBy:'-updated_at'">
+			  {{word.title}}
+			</div>
+		</div>
+
+	</div>
+</div>

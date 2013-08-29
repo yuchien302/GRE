@@ -4,10 +4,11 @@ GRE::Application.routes.draw do
     resources :words
   end
 
-  match "/wenyuchien", :to => "main_pages#wenyuchien"
+  match "/backboneapp", :to => "main_pages#backboneapp"
+  match "/ngapp", :to => "main_pages#ngapp"
 
 
-  root :to => "main_pages#index"
+  root :to => "main_pages#railsapp"
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

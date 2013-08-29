@@ -5,8 +5,8 @@ class GRE.Views.WordsIndex extends Backbone.View
 	events: ->
 		"click #submit_word": 'submitWord'
 		"click #new_word": 'newWord'
-		"keyup #search-word": 'searchWord'
-		"focus #search-word": 'focusSearchWord'
+		# "keyup #search-word": 'searchWord'
+		# "focus #search-word": 'focusSearchWord'
 
 	initialize: ->
 		@collection.on('reset', @render, this)
@@ -16,28 +16,6 @@ class GRE.Views.WordsIndex extends Backbone.View
 
 	render: ->
 		$(@el).html(@template())
-		# @$(".modal-body").on "mouseenter", ->
-		# 	$("body").css("overflow", "hidden")
-		# .on "mouseleave", ->
-		# 	$("body").css("overflow", "auto")
-
-		# @$(".my-textarea").on "mouseenter", ->
-		# 	console.log "mouseenter"
-		# 	$(".modal-body").css("overflow", "hidden");
-		# .on "mouseleave", ->
-		# 	$(".modal-body").css("overflow", "auto");
-
-		# @$(".modal-body").on "scroll", (e, d) ->
-		# 	t = $(this);
-		# 	# console.log "mousewheel " + d
-		# 	e.bubbles = false
-		# 	console.log d
-		# 	if (d > 0 && t.scrollTop() == 0)
-
-		# 		e.preventDefault();
-		# 	else
-		# 		if (d < 0 && (t.scrollTop() == t.get(0).scrollHeight - t.innerHeight()))
-		# 			e.preventDefault();
  
 
 		@collection.each(@appendWord)
@@ -47,13 +25,13 @@ class GRE.Views.WordsIndex extends Backbone.View
 		if word.get('title') == ""
 			return
 		view = new GRE.Views.WordShow(model: word)
-		@$("#wordlist").append(view.render().el)
-		title = word.get('title')
-		$wordview = @$("#" + title)
-		title = title.substr(0, title.length-1)
-		while ( ( title!="" && @$("#"+title).length == 0 ) )
-			$wordview.before("<div id=\"" + title + "\" class='word-anchor' ></div>")
-			title = title.substr(0, title.length-1)
+		@$("#wordlist").prepend(view.render().el)
+		# title = word.get('title')
+		# $wordview = @$("#" + title)
+		# title = title.substr(0, title.length-1)
+		# while ( ( title!="" && @$("#"+title).length == 0 ) )
+		# 	$wordview.before("<div id=\"" + title + "\" class='word-anchor' ></div>")
+		# 	title = title.substr(0, title.length-1)
 
 
 
@@ -67,12 +45,6 @@ class GRE.Views.WordsIndex extends Backbone.View
 		$('#word_root').val("")
 		$('#word_note').val("")
 
-		# $('#word_title_preview').text("GRE")
-		# $('#word_meaning_preview').text("")
-		# $('#word_tips_preview').text("")
-		# $('#word_sen_preview').text("")
-		# $('#word_root_preview').text("")
-		# $('#word_note_preview').text("")
 
 	submitWord: (e) ->
 		self = this

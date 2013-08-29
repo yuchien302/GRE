@@ -1,0 +1,152 @@
+// Place all the styles related to the Words controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+#ngapp {
+	position: relative;
+}
+
+#ngapp .word{
+	background-color: #ffffff;
+	margin: 15px 0 15px 0;
+	position: relative;	
+
+	-webkit-border-radius: 1px;
+	-moz-border-radius: 1px;
+	border-radius: 1px;
+
+	-moz-box-shadow:0px 1px 3px 0px rgba(119, 119, 119, 0.81);
+	-webkit-box-shadow:0px 1px 3px 0px rgba(119, 119, 119, 0.81);
+	box-shadow:0px 1px 3px 0px rgba(119, 119, 119, 0.81);
+
+	.content {
+		margin: 5px 0 10px 10px;
+		word-wrap: normal;
+	}
+	.word-anchor{
+		position: absolute;
+		top: -50px;
+
+	}
+
+}
+
+#ngapp .word-root {
+		background-color: rgb(247, 241, 234);
+
+		h2 {
+			color: rgb(116, 116, 116);
+			font-style: italic;
+		}
+}
+
+#ngapp .word-content {
+	margin: 20px 20px 20px 20px; 
+	
+}
+
+#main-panel {
+	position: fixed;
+	z-index: 10;
+	top:0;
+	left:0;
+	padding-top: 8px;
+	padding-bottom: 5px;
+
+	width: 100%;
+	-moz-box-shadow:0px 0px 3px 5px #e5e5e5;
+	-webkit-box-shadow:0px 0px 3px 5px #e5e5e5;
+	box-shadow:0px 0px 3px 5px #e5e5e5;
+
+	background-color: #e5e5e5;
+	width: 100%;
+	.input-append {
+		margin-left: 19px;
+		margin-bottom: 0;
+	}
+}
+
+#wordlist {
+	margin-top: 40px;
+}
+
+.word-content pre {
+  font-family: '微軟正黑體', verdana, arial, helvetica, sans-serif;
+	background-color: #fff;
+	border: 0px;
+}
+
+#ngapp .word-panel{
+	position: absolute;
+	top: 0px;
+	right: 20px;
+
+	margin-top: 25px;
+
+
+}
+
+#word_modal {
+	width: 830px;
+	margin-left: -415px;
+
+
+	.modal-body{
+		margin-left: 50px;
+		overflow: scroll;
+	}
+	.content {
+		margin: 5px 0 10px 10px;
+		word-wrap: normal;
+	}
+
+}
+.my-input::-webkit-input-placeholder{
+	height: 1em;
+	padding-top: 5px;
+
+}
+#word_modal .my-input{
+	font-size: 2em;
+	height: 1em;
+	font-weight: bold;
+	border-radius: none;
+	box-shadow: none;
+}
+
+#word_modal:focus{
+	box-shadow: none;
+	outline: none;
+}
+
+#word_modal .my-textarea{
+	resize:none;
+	border-radius: none;
+	box-shadow: none;
+}
+
+#word_modal .my-textarea:focus,
+#word_modal .my-textarea:active{
+	resize:auto;
+	box-shadow: none;
+	border-radius: none;
+}
+
+
+
+#new_word {
+	float: right;
+	margin-right: 30px;
+}
+
+@media (max-width: 600px) {
+  #new_word {
+    display: none;
+  }
+  #desktop .word-panel{
+		display: none;
+	}
+}
+
+
+
