@@ -3,7 +3,14 @@ class WordsController < ApplicationController
   respond_to :json
   
   def index
-    respond_with Word.all(:order => "updated_at ASC")
+    # @words=[]
+    if(params[:category_id])
+      c = Category.find(params[:category_id])
+      respond_with c.words
+    else
+      respond_with Word.all(:order => "updated_at ASC")
+    end
+    
 
 
     # @words = Word.all()
@@ -34,7 +41,12 @@ class WordsController < ApplicationController
   end
   
   def create
-    respond_with Word.create(params[:word])
+    @word = Word.create(params[:word])
+    if(params[:category_id])
+      c = Category.find(params[:category_id])
+      c.words << @word 
+    end
+    respond_with @word 
   end
   
   def update

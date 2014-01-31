@@ -11,4 +11,5 @@
  *= require_self
  *= require main.css
  *= require words.css
+ *= require learning.css.sass
  */

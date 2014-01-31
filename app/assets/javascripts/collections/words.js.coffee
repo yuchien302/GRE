@@ -1,9 +1,13 @@
 class GRE.Collections.Words extends Backbone.Collection
-	url: '/api/words'
+	
 
 	model: GRE.Models.Word
 
-
+	initialize: (id) ->
+		if id
+			@url = '/api/categories/' + id + '/words'
+		else
+			@url = '/api/words'
 	# comparator: (word) ->
 	# 	title = word.get('title')
 	# 	if title[0] == "-"

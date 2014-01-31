@@ -2,61 +2,91 @@
 <div id='main-panel'>
   <span class="input-append">
     <input  id="search-word" type="text">
-    <span class="add-on"><i class="icon-search"></i></span>
+    <span class="add-on"><span class="glyphicon glyphicon-search"></span></span>
   </span>
 
-  <button id="new_word" class='btn btn-success' href="#word_modal"  data-toggle="modal"> <i class="icon-plus icon-white"></i> </button>
+
+  <button id="new_category" class='btn btn-success' href="#category_modal"  data-toggle="modal" data-target="#category_modal"> <span class="glyphicon glyphicon-plus"></span>New Category </button>
+
+  <a class='btn btn-primary' href="/categories"> <span class="glyphicon glyphicon-list"></span>All Categories </a>
+
+  <button id="new_word" class='btn btn-success' href="#word_modal"  data-toggle="modal" data-target=".bs-modal-lg"> <span class="glyphicon glyphicon-plus"></span> </button>
+
 
 </div>
 
 <div id="wordlist"></div>
 
 
+<div id="category_modal" class="modal fade" data-wid="" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+          <h4 class="modal-title" id="myModalLabel">New Category</h4>
+        </div>
+
+      <div class="modal-body">
+          <input type="text" id="category_title" class="my-input" placeholder="Category Name"/>
+      </div>
+
+      <div class="modal-footer">
+        <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
+        <button class="btn btn-primary" id="submit_category" >Save</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
 
 <!-- Word Modal -->
 
-<div id="word_modal" class="modal hide fade" data-wid="" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-  
-  <div class="modal-header">
-    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-    <input type="text" id="word_title" class="my-input span6" placeholder="V170 \._./"/>
-  </div>
+<div id="word_modal" class="modal fade bs-modal-lg" data-wid="" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+          <input type="text" id="word_title" class="my-input" placeholder="V170 \._./"/>
+        </div>
 
-  <div class="modal-body">
-    <div>
-      <span class="label label-success">解釋</span><br>
-      <textarea  id="word_meaning" class="span6 content my-textarea" placeholder="meaning"></textarea><br>
+      <div class="modal-body">
+        <div>
+          <span class="label label-success">解釋</span><br>
+          <textarea  id="word_meaning" class="content my-textarea" placeholder="meaning"></textarea><br>
+        </div>
+
+
+        <div>
+          <span class="label label-important">記</span><br>
+          <textarea  id="word_tips" class="content my-textarea" placeholder="tips"></textarea><br>
+        </div>
+        
+
+        <div>
+          <span class="label label-info">例</span><br>
+          <textarea  id="word_sen" class="content my-textarea" placeholder="sen"></textarea><br>
+        </div>
+        
+
+        <div>
+          <span class="label">字根</span><br>
+          <textarea  id="word_root" class="content my-textarea" placeholder="root"></textarea><br>
+        </div>
+        
+
+        <div>
+          <span class="label">備註</span><br>
+          <textarea  id="word_note" class="content my-textarea" placeholder="note"></textarea><br>
+        </div>
+
+      </div>
+
+      <div class="modal-footer">
+        <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
+        <button class="btn btn-primary"  id="submit_word">Save</button>
+      </div>
     </div>
-
-
-    <div>
-      <span class="label label-important">記</span><br>
-      <textarea  id="word_tips" class="span6 content my-textarea" placeholder="tips"></textarea><br>
-    </div>
-    
-
-    <div>
-      <span class="label label-info">例</span><br>
-      <textarea  id="word_sen" class="span6 content my-textarea" placeholder="sen"></textarea><br>
-    </div>
-    
-
-    <div>
-      <span class="label">字根</span><br>
-      <textarea  id="word_root" class="span6 content my-textarea" placeholder="root"></textarea><br>
-    </div>
-    
-
-    <div>
-      <span class="label">備註</span><br>
-      <textarea  id="word_note" class="span6 content my-textarea" placeholder="note"></textarea><br>
-    </div>
-
-  </div>
-
-  <div class="modal-footer">
-    <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
-    <button class="btn btn-primary" id="submit_word">Save</button>
   </div>
 </div>
 

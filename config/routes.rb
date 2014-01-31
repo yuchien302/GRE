@@ -1,15 +1,26 @@
 GRE::Application.routes.draw do
   
+
   scope "api" do
-    resources :words
+    resources :categories do
+      resources :words
+      post "reset-progress", :to => "categories#resetProgress"
+    end
+
+    resources :words do
+      resources :reviews
+    end
+
+
   end
 
   match "/backboneapp", :to => "main_pages#backboneapp"
   match "/ngapp", :to => "main_pages#ngapp"
 
 
-  root :to => "main_pages#railsapp"
+  root :to => "main_pages#backboneapp"
 
+  get '*backbone-route' => 'main_pages#backboneapp'
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

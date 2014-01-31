@@ -1,11 +1,13 @@
 class GRE.Views.WordShow extends Backbone.View
 
 	template: JST['words/show']
-	className: "row-fluid word"
+	className: "row word"
 
 	events:
 		"click .edit_word": 'editWord'
 		"click .remove_word": 'removeWord'
+		"click .state-master": 'stateMaster'
+		"click .state-forgot": 'stateForgot'
 
 	initialize: ->
 		@model.on('destroy', @close, this)
@@ -23,7 +25,7 @@ class GRE.Views.WordShow extends Backbone.View
 		if @model.get('root') == "*"
 			$(@el).addClass('word-root')
 
-		$(@el).attr('id', "_" + @model.get('title'))
+		# $(@el).attr('id', "_" + @model.get('title'))
 		$(@el).attr('data-wid', @model.id)
 		this
 
@@ -50,6 +52,12 @@ class GRE.Views.WordShow extends Backbone.View
 	removeWord: ->
 		sure = confirm "確定嗎QQ?"
 		@model.destroy() if sure
+
+	stateMaster: ->
+		@model.reviews.create({state: "master"})
+
+	stateForgot: ->
+		@model.reviews.create({state: "forgot"})
 
 	close: =>
 		this.remove()

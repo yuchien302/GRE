@@ -5,6 +5,8 @@ class GRE.Views.WordsIndex extends Backbone.View
 	events: ->
 		"click #submit_word": 'submitWord'
 		"click #new_word": 'newWord'
+		"click #submit_category": 'submitCategory'
+
 		# "keyup #search-word": 'searchWord'
 		# "focus #search-word": 'focusSearchWord'
 
@@ -48,7 +50,7 @@ class GRE.Views.WordsIndex extends Backbone.View
 
 	submitWord: (e) ->
 		self = this
-		e.preventDefault()
+		# e.preventDefault()
 		attributes = 
 			title: $('#word_title').val()
 			meaning: $('#word_meaning').val()
@@ -56,37 +58,39 @@ class GRE.Views.WordsIndex extends Backbone.View
 			tips: $('#word_tips').val()
 			root: $('#word_root').val()
 			note: $('#word_note').val()
+		$('#word_modal').modal('hide')
 
-		@$('#word_modal').modal('hide')
+		setTimeout ->
+			if(Backbone.submitType == "New")
+				self.collection.create attributes,
+					wait:true
+					success: (word) ->
+						console.log "create success!"
+						# location.hash = word.get('title')
+					error: (word, msg) ->
+						alert "error: " + msg
 
-		if(Backbone.submitType == "New")
-			@collection.create attributes,
-				wait:true
-				success: (word) ->
-					console.log "create success!"
-					location.hash = word.get('title')
-				error: (word, msg) ->
-					alert "error: " + msg
+			else if(Backbone.submitType == "Edit")
+				wid = $('#word_modal').attr('data-wid')
+				self.collection.get(wid).save attributes, 
+					wait: true
+					success: (word) ->
+						console.log "update success!"
+						# location.hash = word.get('title')
+					error: (word, msg) ->
+						alert "error: " + msg
+		, 100
 
-		else if(Backbone.submitType == "Edit")
-			wid = $('#word_modal').attr('data-wid')
-			@collection.get(wid).save attributes, 
-				wait: true
-				success: (word) ->
-					console.log "update success!"
-					location.hash = word.get('title')
-				error: (word, msg) ->
-					alert "error: " + msg
-
-
+		
+		
 
 	searchWord: ->
-		location.hash = $('#search-word').val()
+		# location.hash = $('#search-word').val()
 		# $(".word").show()
 		
 	focusSearchWord: ->
-		location.hash = ""
-		location.hash = $('#search-word').val()
+		# location.hash = ""
+		# location.hash = $('#search-word').val()
 		# query = 
 		# pattern = new RegExp('^' + query)
 		# cpattern = new RegExp('@$')
@@ -97,4 +101,14 @@ class GRE.Views.WordsIndex extends Backbone.View
 		# 	$(".word").filter (index) ->
 		# 		!pattern.test( $(this).attr('id') )
 		# 	.hide()
+
+	submitCategory: ->
+		attributes = 
+			title: $('#category_title').val()
+		category = new GRE.Models.Category({title: $('#category_title').val()})
+		category.save null, success: (category) ->
+			console.log "new category: " + category.get("title")
+			GREroute.navigate("/categories/"+category.get("title"), {trigger: true})
+
+
 

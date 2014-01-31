@@ -3,7 +3,18 @@ window.GRE =
 	Collections: {}
 	Views: {}
 	Routers: {}
+	Helper: {
+		findIndexOfWordsByTitle: (words, title) ->
+			idx = -1
+			words.each (word, index) ->
+				if(word.get("title")==title) 
+					idx = index
+			return idx
+
+	}
 	prettyText: (text) ->
+		if(!text)
+			return
 		pattermb = /\[/
 		patterme = /\]/
 		begin = text.search(pattermb)
@@ -24,6 +35,7 @@ window.GRE =
 	initialize: -> 
 		window.GREroute = new GRE.Routers.Words
 		Backbone.history.start({hashChange: false})
+		# Backbone.history.start()
 
 
 $(document).ready ->

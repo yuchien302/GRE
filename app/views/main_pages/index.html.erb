@@ -12,9 +12,9 @@
 		<% pword = "" %>
 		<% @words.each do |word| %>
 			<% if word["root"]=="*" %>
-				<div class="row-fluid word word-root" id="_<%= word.title %>" data-wid="<%= word.id %>">
+				<div class="row word word-root" id="_<%= word.title %>" data-wid="<%= word.id %>">
 			<% else %>
-				<div class="row-fluid word" id="_<%= word.title %>" data-wid="<%= word.id %>">
+				<div class="row word" id="_<%= word.title %>" data-wid="<%= word.id %>">
 			<% end %>
 
 			<% title = word.title %>

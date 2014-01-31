@@ -4,6 +4,8 @@ window.GRE =
 	Views: {}
 	Routers: {}
 	prettyText: (text) ->
+		if(!text)
+			return
 		pattermb = /\[/
 		patterme = /\]/
 		begin = text.search(pattermb)

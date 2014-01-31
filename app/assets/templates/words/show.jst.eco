@@ -1,4 +1,4 @@
-<div id="<%= @model.get('title') %>" class="word-anchor" ></div>
+<!-- <div id="<%= @model.get('title') %>" class="word-anchor" ></div> -->
 <div class="word-content">
 
 	<h2><%= @model.get('title') %></h2>
@@ -38,7 +38,7 @@
 
 	<% if @model.get('note')!="": %>
 	<div>
-		<span class="label">備註</span>
+		<span class="label label-default">備註</span>
 		<div class="content content-note"></div>
 	</div>
 	<% end %>
@@ -48,7 +48,8 @@
 </div>
 
 <div class="word-panel">
-	<button class='btn btn-warning edit_word' href="#word_modal" data-toggle="modal"> <i class="icon-edit icon-white"></i> </button>
-	<button class='btn btn-danger remove_word'> <i class="icon-trash icon-white"></i> </button>
+	<button class='btn btn-warning edit_word' href="#word_modal" data-toggle="modal"> <span class="glyphicon glyphicon-edit"></span> </button>
+	<button class='btn btn-danger remove_word'> <span class="glyphicon glyphicon-trash"></span></button>
+
 </div>
 

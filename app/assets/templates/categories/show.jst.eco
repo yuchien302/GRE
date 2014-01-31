@@ -1,0 +1,9 @@
+
+<div class="category-content">
+	<h2><button class='btn btn-danger remove_category'> <span class="glyphicon glyphicon-trash"></span></button>  <%= @model.get('title') %></h2>
+</div>
+
+<div class="category-panel">
+	
+</div>
+

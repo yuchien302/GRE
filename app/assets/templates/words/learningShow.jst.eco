@@ -1,0 +1,29 @@
+
+
+
+  <div class="word face front">
+  	<div class="flip-content">
+	  	<h2><%= @model.get('title') %></h2>
+	</div>
+	<div class="state-panel">
+		
+		<button class='btn btn-danger state-forgot'> <span class="glyphicon glyphicon-chevron-left"></span> 忘記了 Orz </button><!-- 
+	--><button class='btn btn-success state-master'> 我會!! <span class="glyphicon glyphicon-chevron-right"></span> </button>
+	</div>
+  </div>
+ 
+  <div class="word face back">
+
+    <div class="flip-content">
+	  	<h2><%= @model.get('title') %></h2>
+	</div>
+	<div class="state-panel">
+		<button class='state-next'> 下一張  </button>
+	</div>
+
+  </div>
+
+
+
+
+

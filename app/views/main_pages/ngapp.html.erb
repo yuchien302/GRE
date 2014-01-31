@@ -4,7 +4,7 @@
 
 		<input type="text" ng-model="searchText">
 		<div id="wordlist">
-			<div class="row-fluid word" ng-repeat="word in words | filter:searchText | orderBy:'-updated_at'">
+			<div class="row word" ng-repeat="word in words | filter:searchText | orderBy:'-updated_at'">
 			  {{word.title}}
 			</div>
 		</div>

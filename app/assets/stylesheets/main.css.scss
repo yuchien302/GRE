@@ -1,5 +1,30 @@
 @import "bootstrap";
-@import "bootstrap-responsive";
+
+
+$label-success-bg: #468847;
+$screen-sm-min: 768px;
+
+@media screen and (min-width: $screen-sm-min) {
+  
+  .modal-sm { width: 300px; }
+  .modal-lg { width: 1000px; }
+}
+
+.modal-lg{
+  width: 800px
+}
+
+.label-success{
+  background-color: #468847;
+}
+
+.label-info{
+  background-color: #3a87ad;
+}
+
+.label-important{
+  background-color: #b94a48;
+}
 
 body {
   background-color: #e5e5e5;

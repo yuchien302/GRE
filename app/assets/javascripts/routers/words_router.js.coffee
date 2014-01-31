@@ -1,23 +1,77 @@
 class GRE.Routers.Words extends Backbone.Router
 	routes:
 		'backboneapp': 'backboneapp'
-		'backboneapp/#/new' : 'newWord'
-		# '': 'index'
-	initialize: ->
-		@collection = new GRE.Collections.Words()
-		# @collection.fetch({async:false, reset: true})
-		@collection.fetch()
-		indexView = new GRE.Views.WordsIndex(collection: @collection)
-		$('#desktop').html(indexView.render().el)
+		'learning/:category': 'learningCategory'
+		'learning/:category/': 'learningCategory'
+		'learning/:category/:word': 'learningCategoryWord'
+		'categories': 'categoryIndex'
+		'categories/': 'categoryIndex'
+		':category': 'category'
 
+		
+		'': 'backboneapp'
+
+	initialize: ->
+		console.log "[route] initialize"
+		@categories = new GRE.Collections.Categories()
+		@categories.fetch({async:false})
+		# console.log @categories
 
 	backboneapp: ->
-		console.log "backboneapp"
-		$('#desktop').show()
+		console.log "[route] backboneapp"
 
-	newWord: ->
-		console.log "new word"
-		$('#desktop').hide()
+		@words = new GRE.Collections.Words()
+		# @collection.fetch({async:false, reset: true})
+		@words.fetch({async:false})
+		indexView = new GRE.Views.WordsIndex(collection: @words)
+		$('#desktop').html(indexView.render().el)
+
+		# $('#desktop').show()
+	category: (categoryTitle)->
+		console.log "[route] category: " + categoryTitle
+		@category = @categories.findWhere({title: categoryTitle})
+		if(@category)
+
+			@words = new GRE.Collections.Words(@category.id)
+
+			@words.fetch({async:false})
+
+			indexView = new GRE.Views.WordsIndex(collection: @words)
+			$('#desktop').html(indexView.render().el)
+
+	learningCategoryWord: (categoryTitle, word)->
+		console.log "[route] learning category: " + categoryTitle + ", word: " + word
+		@category = @categories.findWhere({title: categoryTitle})
+
+		if(@category)
+			@words = new GRE.Collections.Words(@category.id)
+			@words.fetch({async:false})
+			if(@words)
+				idx = GRE.Helper.findIndexOfWordsByTitle(@words, word)
+
+				if(idx==-1)
+					GREroute.navigate("/learning/"+categoryTitle, {trigger: true})
+				learningView = new GRE.Views.LearningIndex({collection: @words, category:@category , idx:idx})
+				$('#desktop').html(learningView.render().el)
+
+
+
+
+	learningCategory: (categoryTitle)->
+		console.log "[route] learning category: " + categoryTitle
+
+		@category = @categories.findWhere({title: categoryTitle})
+
+		if(@category)
+			@words = new GRE.Collections.Words(@category.id)
+			@words.fetch({async:false})
+			learningView = new GRE.Views.LearningIndex({collection: @words, category:@category, idx:0})
+			$('#desktop').html(learningView.render().el)
+
+	categoryIndex:  ->
+		console.log "[route] categoryIndex"
+		indexView = new GRE.Views.CategoriesIndex(collection: @categories)
+		$('#desktop').html(indexView.render().el)
 
 	# index: ->
 	# 	console.log "index"
